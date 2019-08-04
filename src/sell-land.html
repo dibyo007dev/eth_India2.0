@@ -2,484 +2,536 @@
 <html lang="en">
 
 <head>
-    <title>Sell Land</title>
+    <title>Sell Your Asset</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">  
+    <!-- <script src="https://app.tor.us/v0.0.20/embed.min.js"
+        integrity="sha384-tDTJ86ig+B5z7vXffrWKaBLC8dOCtiSV4a6OjWboyxfvcFNyL9Udxcld4kj1Wxny"
+        crossorigin="anonymous"></script>
+    
+        <script>
+                function delay(){
+                    setTimeout(() => {
+                        console.log("delay");
+                    },2000);
+                }
+        
+                delay();
+            </script>
+     -->
     <script>
+
         landABI = [
-            {
-                "constant": true,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "account",
-                        "type": "address"
-                    }
-                ],
-                "name": "balanceOf",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "approve",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "totalSupply",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "sender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "recipient",
-                        "type": "address"
-                    },
-                    {
-                        "name": "amount",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "transferFrom",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    }
-                ],
-                "name": "setTotalPrice",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "addedValue",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "increaseAllowance",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "assetType",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "area",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint8"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "ownerName",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    },
-                    {
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "name": "_balances",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "ownerAddress",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "subtractedValue",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "decreaseAllowance",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "recipient",
-                        "type": "address"
-                    },
-                    {
-                        "name": "amount",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "transfer",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "totalPrice",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "id",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [
-                    {
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    }
-                ],
-                "name": "allowance",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "getTotalPrice",
-                "outputs": [
-                    {
-                        "name": "price",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_total",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "setTotalSupply",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "name": "_ownerName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_assetType",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_area",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "_noOfTokens",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "_parentAddress",
-                        "type": "address"
-                    },
-                    {
-                        "name": "_totalPrice",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "name": "from",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "Transfer",
-                "type": "event"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "Approval",
-                "type": "event"
-            }
-        ]
+{
+"constant": true,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "account",
+"type": "address"
+}
+],
+"name": "balanceOf",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "approve",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalSupply",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "sender",
+"type": "address"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transferFrom",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": true,
+"stateMutability": "payable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+}
+],
+"name": "setTotalPrice",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "addedValue",
+"type": "uint256"
+}
+],
+"name": "increaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "assetType",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "area",
+"outputs": [
+{
+"name": "",
+"type": "uint8"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "withdraw",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerName",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "address"
+}
+],
+"name": "_balances",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerAddress",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "subtractedValue",
+"type": "uint256"
+}
+],
+"name": "decreaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transfer",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": true,
+"stateMutability": "payable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalPrice",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "id",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "_owner",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "owner",
+"type": "address"
+},
+{
+"name": "spender",
+"type": "address"
+}
+],
+"name": "allowance",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getTotalPrice",
+"outputs": [
+{
+"name": "price",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_total",
+"type": "uint256"
+}
+],
+"name": "setTotalSupply",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_parentAddress",
+"type": "address"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "from",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "to",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Transfer",
+"type": "event"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "owner",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "spender",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Approval",
+"type": "event"
+}
+]
         factABI = [
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "getChildLandCoin",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "address[]"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_ownerName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_assetType",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_area",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "_noOfTokens",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "_totalPrice",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "createChildLandCoin",
-                "outputs": [
-                    {
-                        "name": "lc",
-                        "type": "address"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            }
-        ];
+{
+"constant": false,
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"name": "createChildLandCoin",
+"outputs": [
+{
+"name": "lc",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getChildLandCoin",
+"outputs": [
+{
+"name": "",
+"type": "address[]"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+}
+]
+
         if (window.ethereum) {
             web3Provider = window.ethereum;
             try {
@@ -502,7 +554,7 @@
     web3 = new Web3(web3Provider);
 
 
-        const factoryContractAddress = "0x176f9d9D62e77488CC48Aef60197A43DDf7de4Ae";
+        const factoryContractAddress = "0xA87F1fc60739a912c3d588044C2aC40bBE4b3751";
         //const factoryContract = web3.eth.contract(factABI, factoryContractAddress)
         const factoryContract = web3.eth.contract(factABI);
         const contractInstance = factoryContract.at(factoryContractAddress);

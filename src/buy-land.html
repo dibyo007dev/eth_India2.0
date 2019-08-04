@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Buy Assets</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -11,477 +11,514 @@
 
     <script>
         landABI = [
-            {
-                "constant": true,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "account",
-                        "type": "address"
-                    }
-                ],
-                "name": "balanceOf",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "approve",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "totalSupply",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "sender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "recipient",
-                        "type": "address"
-                    },
-                    {
-                        "name": "amount",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "transferFrom",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    }
-                ],
-                "name": "setTotalPrice",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "addedValue",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "increaseAllowance",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "assetType",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "area",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint8"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "ownerName",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    },
-                    {
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "name": "_balances",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "ownerAddress",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "name": "subtractedValue",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "decreaseAllowance",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "recipient",
-                        "type": "address"
-                    },
-                    {
-                        "name": "amount",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "transfer",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "totalPrice",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "id",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [
-                    {
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "name": "spender",
-                        "type": "address"
-                    }
-                ],
-                "name": "allowance",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "getTotalPrice",
-                "outputs": [
-                    {
-                        "name": "price",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_total",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "setTotalSupply",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "name": "_ownerName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_assetType",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_area",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "_noOfTokens",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "_parentAddress",
-                        "type": "address"
-                    },
-                    {
-                        "name": "_totalPrice",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "name": "from",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "Transfer",
-                "type": "event"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "name": "spender",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "value",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "Approval",
-                "type": "event"
-            }
-        ]
+{
+"constant": true,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "account",
+"type": "address"
+}
+],
+"name": "balanceOf",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "approve",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalSupply",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "sender",
+"type": "address"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transferFrom",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": true,
+"stateMutability": "payable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+}
+],
+"name": "setTotalPrice",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "addedValue",
+"type": "uint256"
+}
+],
+"name": "increaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "assetType",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "area",
+"outputs": [
+{
+"name": "",
+"type": "uint8"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "withdraw",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerName",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "address"
+}
+],
+"name": "_balances",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerAddress",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "subtractedValue",
+"type": "uint256"
+}
+],
+"name": "decreaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transfer",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": true,
+"stateMutability": "payable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalPrice",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "id",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "_owner",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "owner",
+"type": "address"
+},
+{
+"name": "spender",
+"type": "address"
+}
+],
+"name": "allowance",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getTotalPrice",
+"outputs": [
+{
+"name": "price",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_total",
+"type": "uint256"
+}
+],
+"name": "setTotalSupply",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_parentAddress",
+"type": "address"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "from",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "to",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Transfer",
+"type": "event"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "owner",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "spender",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Approval",
+"type": "event"
+}
+]   
         factABI = [
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "getChildLandCoin",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "address[]"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_ownerName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_id",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_assetType",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_area",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "_noOfTokens",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "_totalPrice",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "createChildLandCoin",
-                "outputs": [
-                    {
-                        "name": "lc",
-                        "type": "address"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            }
-        ]
+{
+"constant": false,
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"name": "createChildLandCoin",
+"outputs": [
+{
+"name": "lc",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "getChildLandCoin",
+"outputs": [
+{
+"name": "",
+"type": "address[]"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+}
+]
+
         if (window.web3) {
             metamaskWeb3 = new Web3(web3.currentProvider)
         }
@@ -489,7 +526,7 @@
         let account = metamaskWeb3.eth.accounts
         console.log('metamaskWeb3', account)
 
-        const factoryContractAddress = "0x176f9d9D62e77488CC48Aef60197A43DDf7de4Ae";
+        const factoryContractAddress = "0xA87F1fc60739a912c3d588044C2aC40bBE4b3751";
         //const factoryContract = metamaskWeb3.eth.contract(factABI, factoryContractAddress)
         const factoryContract = web3.eth.contract(factABI);
         const contractInstance = factoryContract.at(factoryContractAddress);
@@ -521,8 +558,7 @@
                         var newCellFour = newRow.insertCell(3);
                         var newCellFive = newRow.insertCell(4);
                         var newCellSix = newRow.insertCell(5);
-                        var newCellSeven = newRow.insertCell(6);
-                        var newCellEight = newRow.insertCell(7);
+                        var newCellEight = newRow.insertCell(6);
 
                         var newTextOne;
                         var newTextTwo;
@@ -530,9 +566,9 @@
                         var newTextFour;
                         var newTextFive;
                         var newTextSix;
-                        var newTextSeven;
                         var newTextEight;
-
+                        var contractID;
+                        var tokenPrice;
 
                         //Owner Name
                         eachLandInstance.ownerName((err, res1) => {
@@ -545,6 +581,7 @@
                             // var tableRef = document.getElementById("123xyz");
                             newTextTwo = document.createTextNode(res2);
                             console.log(res2);
+                            contractID = res2;
                             newCellTwo.appendChild(newTextTwo);
 
                         });
@@ -581,6 +618,7 @@
                             console.log(res);
                             newTextSix = document.createTextNode(res6);
                             newCellSix.appendChild(newTextSix);
+                            tokenPrice = res6;
 
                         });
 
@@ -589,42 +627,39 @@
                         // x.setAttribute("action", "#")
 
                         // Quantity
-                        var input = document.createElement('input');
-                        input.setAttribute("type", "text");
-                        input.setAttribute("name", "0");
-                        console.log(input.value)
+                        // var input = document.createElement('input');
+                        // input.setAttribute("type", "text");
+                        // input.setAttribute("name", "0");
+                        // console.log(input.value)
 
                         //x.appendChild(input);
 
-                        //Button
                         var button = document.createElement('button');
                         button.setAttribute("type", "submit");
-                        button.setAttribute("value", "Buy");
+                        button.setAttribute("value", "BUy");
                         button.innerHTML = " Buy "
 
 
-                        newCellSeven.appendChild(input);
-                        newCellEight.appendChild(button);
-                        console.log(input.value)
+                        // newCellSeven.appendChild(input);
+                        // newCellEight.appendChild(button);
+                        // console.log(input.value)
 
                         // x.appendChild(button);
                         // x.onclick = function() {
                         //     console.log("sfds")
                         // };
 
-                        //var button = document.createElement('button');
-                        //button.innerHTML = " Buy "
-                        //newCellEight.appendChild(button);
+                        var button = document.createElement('button');
+                        button.innerHTML = " Buy "
+                        newCellEight.appendChild(button);
 
-                        // button.addEventListener("click", function() {
-                        //     input.setAttribute("value", input.getAttribute("value"));
-                        //     alert("Button clicked" + input.getAttribute("value"));
+                        button.addEventListener("click", function() {
+                            var totalPrice = 10 * tokenPrice;
+                            eachLandInstance.transfer(contractID, 0xac7FA16Bdcb3E31904394E4F03c77a9572E1bFfa
+, 10, {value: metamaskWeb3.toWei('0.1', "ether")}, function(err, res){
 
-                        // });
-
-
-
-
+                            });
+                        });
                     }
                     yadayada(i)
                 }
@@ -749,7 +784,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h1>Buy a land</h1>
+                                <h1>Lists of Available Assets</h1>
                                 <hr>
                                 <br />
 
@@ -763,8 +798,7 @@
                                                 <th>Area</th>
                                                 <th>No of Token Available</th>
                                                 <th>Price per Token</th>
-                                                <th>Quantity</th>
-                                                <th>Purchase</th>
+                                                <th>Select</th>
                                             </tr>
                                         </thead>
 
@@ -781,6 +815,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+    
+                                    <h1>CheckOut with Details</h1>
+                                    <hr>
+                                    <br />
+    
+    
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
             <!-- #/ container -->
