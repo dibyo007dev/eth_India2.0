@@ -111,20 +111,6 @@
 "type": "bool"
 }
 ],
-"payable": true,
-"stateMutability": "payable",
-"type": "function"
-},
-{
-"constant": false,
-"inputs": [
-{
-"name": "_id",
-"type": "string"
-}
-],
-"name": "setTotalPrice",
-"outputs": [],
 "payable": false,
 "stateMutability": "nonpayable",
 "type": "function"
@@ -299,8 +285,8 @@
 "type": "bool"
 }
 ],
-"payable": true,
-"stateMutability": "payable",
+"payable": false,
+"stateMutability": "nonpayable",
 "type": "function"
 },
 {
@@ -361,20 +347,6 @@
 "outputs": [
 {
 "name": "",
-"type": "uint256"
-}
-],
-"payable": false,
-"stateMutability": "view",
-"type": "function"
-},
-{
-"constant": true,
-"inputs": [],
-"name": "getTotalPrice",
-"outputs": [
-{
-"name": "price",
 "type": "uint256"
 }
 ],
@@ -478,6 +450,20 @@
 ]
         factABI = [
 {
+"constant": true,
+"inputs": [],
+"name": "getChildLandCoin",
+"outputs": [
+{
+"name": "",
+"type": "address[]"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
 "constant": false,
 "inputs": [
 {
@@ -515,20 +501,6 @@
 "payable": false,
 "stateMutability": "nonpayable",
 "type": "function"
-},
-{
-"constant": true,
-"inputs": [],
-"name": "getChildLandCoin",
-"outputs": [
-{
-"name": "",
-"type": "address[]"
-}
-],
-"payable": false,
-"stateMutability": "view",
-"type": "function"
 }
 ]
 
@@ -554,7 +526,7 @@
     web3 = new Web3(web3Provider);
 
 
-        const factoryContractAddress = "0xA87F1fc60739a912c3d588044C2aC40bBE4b3751";
+        const factoryContractAddress = "0xCB3d5B34a01e16b6b6A85260fD5c3B07aD3bd3fF";
         //const factoryContract = web3.eth.contract(factABI, factoryContractAddress)
         const factoryContract = web3.eth.contract(factABI);
         const contractInstance = factoryContract.at(factoryContractAddress);
@@ -621,13 +593,7 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
-                    <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
-                    </span>
-                </a>
+                
             </div>
         </div>
         <!--**********************************

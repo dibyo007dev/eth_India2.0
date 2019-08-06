@@ -98,20 +98,6 @@
 "type": "bool"
 }
 ],
-"payable": true,
-"stateMutability": "payable",
-"type": "function"
-},
-{
-"constant": false,
-"inputs": [
-{
-"name": "_id",
-"type": "string"
-}
-],
-"name": "setTotalPrice",
-"outputs": [],
 "payable": false,
 "stateMutability": "nonpayable",
 "type": "function"
@@ -286,8 +272,8 @@
 "type": "bool"
 }
 ],
-"payable": true,
-"stateMutability": "payable",
+"payable": false,
+"stateMutability": "nonpayable",
 "type": "function"
 },
 {
@@ -348,20 +334,6 @@
 "outputs": [
 {
 "name": "",
-"type": "uint256"
-}
-],
-"payable": false,
-"stateMutability": "view",
-"type": "function"
-},
-{
-"constant": true,
-"inputs": [],
-"name": "getTotalPrice",
-"outputs": [
-{
-"name": "price",
 "type": "uint256"
 }
 ],
@@ -462,8 +434,22 @@
 "name": "Approval",
 "type": "event"
 }
-]   
+]  
         factABI = [
+{
+"constant": true,
+"inputs": [],
+"name": "getChildLandCoin",
+"outputs": [
+{
+"name": "",
+"type": "address[]"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
 {
 "constant": false,
 "inputs": [
@@ -502,20 +488,6 @@
 "payable": false,
 "stateMutability": "nonpayable",
 "type": "function"
-},
-{
-"constant": true,
-"inputs": [],
-"name": "getChildLandCoin",
-"outputs": [
-{
-"name": "",
-"type": "address[]"
-}
-],
-"payable": false,
-"stateMutability": "view",
-"type": "function"
 }
 ]
 
@@ -526,7 +498,7 @@
         let account = metamaskWeb3.eth.accounts
         console.log('metamaskWeb3', account)
 
-        const factoryContractAddress = "0xA87F1fc60739a912c3d588044C2aC40bBE4b3751";
+        const factoryContractAddress = "0xCB3d5B34a01e16b6b6A85260fD5c3B07aD3bd3fF";
         //const factoryContract = metamaskWeb3.eth.contract(factABI, factoryContractAddress)
         const factoryContract = web3.eth.contract(factABI);
         const contractInstance = factoryContract.at(factoryContractAddress);
@@ -614,13 +586,13 @@
 
 
                         //Price per token
-                        eachLandInstance.getTotalPrice((err, res6) => {
+                        /*eachLandInstance.getTotalPrice((err, res6) => {
                             console.log(res);
                             newTextSix = document.createTextNode(res6);
                             newCellSix.appendChild(newTextSix);
                             tokenPrice = res6;
 
-                        });
+                        });*/
 
                         // var x = document.createElement("form");
                         // x.setAttribute("method", "POST")
@@ -655,9 +627,9 @@
 
                         button.addEventListener("click", function() {
                             var totalPrice = 10 * tokenPrice;
-                            eachLandInstance.transfer(contractID, 0xac7FA16Bdcb3E31904394E4F03c77a9572E1bFfa
-, 10, {value: metamaskWeb3.toWei('0.1', "ether")}, function(err, res){
-
+                            eachLandInstance.transfer(contractID, '0xac7FA16Bdcb3E31904394E4F03c77a9572E1bFfa'
+,2, function(err, res){
+                            
                             });
                         });
                     }
@@ -699,13 +671,7 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
-                    <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
-                    </span>
-                </a>
+                
             </div>
         </div>
         <!--**********************************
